@@ -55,5 +55,7 @@ iptables -A INPUT -i enp0s8 -p icmp --icmp-type echo-request -j DROP
 iptables -A INPUT -i enp0s9 -p icmp --icmp-type echo-request -j ACCEPT
 iptables -A INPUT -i enp0s10 -p icmp --icmp-type echo-request -j ACCEPT
 
+iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+
 # Guardamos reglas que hemos creado
 iptables-save > /etc/iptables/rules.v4
