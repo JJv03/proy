@@ -46,7 +46,7 @@ iptables -A FORWARD -p tcp --dport 80 -d 192.168.51.2 -j ACCEPT
 iptables -A FORWARD -p tcp --dport 22 -d 192.168.53.2 -j ACCEPT
 
 #Se permite la entrada de todo el tráfico local (intranet)
-iptables -A INPUT -i lo -j ACCEPT        #Loopback
+iptables -A INPUT -i lo -j ACCEPT               #Loopback
 iptables -A INPUT -i enp0s9 -p all -j ACCEPT    #RI1
 iptables -A INPUT -i enp0s10 -p all -j ACCEPT   #RI2
 
